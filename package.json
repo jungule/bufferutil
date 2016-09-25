@@ -4,7 +4,7 @@
   "description": "WebSocket buffer utils",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "npm install"
   },
   "repository": {
     "type": "git",
