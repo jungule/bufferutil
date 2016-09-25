@@ -4,7 +4,7 @@
   "description": "WebSocket buffer utils",
   "main": "index.js",
   "scripts": {
-    "test": "node-gyp rebuild"
+    "test": ""
   },
   "repository": {
     "type": "git",
