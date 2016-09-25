@@ -15,12 +15,18 @@ env:
     secure: QxOhxdLcZqs0Sl9AA0hWiH1u2U+M8Pj4N9ZheLiB/fiPzS5SGSeWLa5eqpLNYWzMDO5DOaroYNC6x2mtyHLu9sZKC4qp9uNhMzW24INNu01fEeBX/G/AwlvMtSnbnDpuY/epGJ10Ahehy1PJaUNt2cXdJ0K3UgzqHmPCloe8pYABJmN7lBqpKg9sQ3I89mJ+Zs3HdV5R7RF/KTPJ6lu/FUNu4KxmEO+DsQuVvwQnKRJT8b+qo3V9IN8gJcPR9s9AYrvbwBVkyvqLkHIF0j9FNilgk9D5pQNKbzMAx7D5N6wc2OKQ4YIESOGUdGX2e/b74+ySqdyMTTUfRQ9k5jQ11QDjiFGVy8D0xvzf4BvCSHlh3hlpMNwJHpp7JWOg55LYfnO+d3BvlPZxlWARJ8fevLiDS6kvrrRAnkPwJbbbH0WfqGoJ7KiLb7lyjgMKVY1tnv7c1pHvo1CM8CNo/7aQkG1N3GRwT3v2nCGbV6oGhxA3WgQos5tIancSK3xx+XXWghKYubeOR8/ccMXkWh7KlLXy3YngQG5ELSR+A09hXX606ar+xvCA7v1uZwj5Y2kWv1fVFRZtb56X2oNHQny75V9cZEv+QQgYC0VIgDfWLiahdOeyuk9mUS6wLS6C4d7Yw6JTMqbP5hpL50sbtbjTEI/9tfbXQtRBsLT7dIjQscg=    
 before_install:
 - export CC="gcc-4.9" CXX="g++-4.9"
+install:
+ # - node_modules/.bin/node-gyp rebuild --directory test
+  - node-gyp rebuild
+
 deploy:
   provider: releases
-  api_key: "$CI_USER_TOKEN"
+  api_key:
+    secure: QxOhxdLcZqs0Sl9AA0hWiH1u2U+M8Pj4N9ZheLiB/fiPzS5SGSeWLa5eqpLNYWzMDO5DOaroYNC6x2mtyHLu9sZKC4qp9uNhMzW24INNu01fEeBX/G/AwlvMtSnbnDpuY/epGJ10Ahehy1PJaUNt2cXdJ0K3UgzqHmPCloe8pYABJmN7lBqpKg9sQ3I89mJ+Zs3HdV5R7RF/KTPJ6lu/FUNu4KxmEO+DsQuVvwQnKRJT8b+qo3V9IN8gJcPR9s9AYrvbwBVkyvqLkHIF0j9FNilgk9D5pQNKbzMAx7D5N6wc2OKQ4YIESOGUdGX2e/b74+ySqdyMTTUfRQ9k5jQ11QDjiFGVy8D0xvzf4BvCSHlh3hlpMNwJHpp7JWOg55LYfnO+d3BvlPZxlWARJ8fevLiDS6kvrrRAnkPwJbbbH0WfqGoJ7KiLb7lyjgMKVY1tnv7c1pHvo1CM8CNo/7aQkG1N3GRwT3v2nCGbV6oGhxA3WgQos5tIancSK3xx+XXWghKYubeOR8/ccMXkWh7KlLXy3YngQG5ELSR+A09hXX606ar+xvCA7v1uZwj5Y2kWv1fVFRZtb56X2oNHQny75V9cZEv+QQgYC0VIgDfWLiahdOeyuk9mUS6wLS6C4d7Yw6JTMqbP5hpL50sbtbjTEI/9tfbXQtRBsLT7dIjQscg=
   file:
   - "$TRAVIS_BUILD_DIR/bufferutil.node"
   skip_cleanup: true
   on:
     tags: false
+    repo: jungule/bufferutil
 
