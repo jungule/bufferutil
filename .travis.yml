@@ -10,7 +10,7 @@ addons:
     - g++-4.9
 cache:
   directories:
-  - cache
+   .autoconf
 env:
   global:
 #  - secure: DaGdcKrsVsVqDVj292I7lbE3H5IlsfAa8CffPto2laJLSl6K8zc5QQeXdMyavbXrHJ23/gKQ7EsQQa2C1zWMlV2P0+43Oc124WdYk7TOAIRzaZrUZ0lMrCSeXkjdATpSPnpBQZlUpMJwzWq2tZAcl19dtis3IZCtCYgERLHif7I5WHPWJo8Ll1uQEDblH4Tp5NW36zbilwhp15BPP741BOi1QCT6BjWlz/hSlhveJ+1L8bHJc+VY929420BvLal+kP3+b5LeNYeDWybsmnjZdJspdluF3g+u8AewGXJwygOJorQNk7HcThXpju3J6p2Lm2MSIESb8kFErnpmK9EHNQXzFPP7FjawbNohuBw2hXLoEzoJv/vcL+u4nvDxRf2d2KwmTPoamb0lOF+CRLzqgD6cj5TVbDle+2fl25AgFTLfYOHfzSWdLKGLTvegCkDxHucfRLpCJskEPYyIJytyTJt8iQrvaumVIkE1RzGcf57t+pMTEOMmba05WyG6FUByt1q3JAKWFMjCeCIw6ZjoDqNizmoZmOC3VEZoi/GucqpKA3MhX+D4oCOl/5VqhndWXF78Y2tfQv6xxDBNpUaQn4KnD3wEr7xZLcltzRvSBHPZ7Ghcp+h+aqyv8kfxf/kFIi6SLKIu93tK4SBunVYNrLtBuYs5wG1eqOJUkkl5kT8=
@@ -20,7 +20,7 @@ deploy:
   provider: releases
   api_key:
     secure: LiZHlQnF7F2tuegnMH9PUfwFKulTN/kvngeMqUii2fcbWTUGM56uYxBnv0m5j5PKRaJ13/PLz4Urm1wq7Nh5q+/9eHSReaIRgyyPzbLjUyRv9u/iXnJ4TrrkCm7kLiZq4V5sEhWJHgald8EpnweiTSzOS7+iaeFuPOgqvz6O2L5ANOeyK+XzwxKILr6jzYDblQ2w4geucyUWxwXJ+veCoAW+c6LgTHw3PzcXPVerUvbM0LGU8lfBsoXp/6B18hI03lsrLHsK0qPXS8w3Ib2cp1q6SS/1prhtMOdNJYGh6WmLQQ6xt0sEk/bGJeTdO8wq2hktjjuLFMC7nV2cezjOhI0eHTwkyNULcYPnrbQheTSuS3CpBl4scl09dBsnRK2+bAt3enNjeyFh1DTV2CEQWBJ88CgJgSB38KXgtXIlgZ0QuJaBZQbG6PyfM/goVbGGTYrFeiXRh2nPuLYSGys3Uz2zZOY/8ZRdwOm78nH5GYIqcWpowm6JFYqUUSDzhMW+KPjeCgxOdE5hXWje2WItqiMKzLeHq3KUWvALeMyKsjhKYFkHe2RkEGuOMs90tiXMatNQ6GrPhQMUfvzYkwO3dU7hshufrCP23UiboqRmiq+Av2Teujxvhmh3W/ym9AFDat9a+Y/im3Xoi2AqvSCrcBwxj69KY+c3cLsFLELwMmk=
-  file: "$TRAVIS_BUILD_DIR/bufferutil.node"
+  file: "$TRAVIS_BUILD_DIR/jungule/bufferutil/build/Release/obj.target/bufferutil.node"
   skip_cleanup: true
   on:
     tags: false
